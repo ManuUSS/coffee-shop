@@ -1,4 +1,4 @@
-const { src, dest } = require('gulp');
+const { src, dest, watch } = require('gulp');
 const gulp_sass = require('gulp-sass')( require('sass') );
 
 const css = ( done ) => {
@@ -10,4 +10,11 @@ const css = ( done ) => {
     done();
 }
 
+const dev = ( done ) => {
+    // Recieves two paramaters
+    // file to watch and function to execute
+    watch( 'src/scss/app.scss', css );
+}
+
 exports.css = css;
+exports.dev = dev;
