@@ -14,6 +14,7 @@ const dev = ( done ) => {
     // Recieves two paramaters
     // file to watch and function to execute
     watch( 'src/scss/app.scss', css );
+    done();
 }
 
 exports.css = css;
