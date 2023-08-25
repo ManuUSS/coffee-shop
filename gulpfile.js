@@ -1,4 +1,4 @@
-const { src, dest, watch } = require('gulp');
+const { src, dest, watch, series } = require('gulp');
 const gulp_sass = require('gulp-sass')( require('sass') );
 const post_css = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -13,12 +13,12 @@ const css = ( done ) => {
     done();
 }
 
-const dev = ( done ) => {
+const dev = () => {
     // Recieves two paramaters
     // file to watch and function to execute
     watch( 'src/scss/app.scss', css );
-    done();
 }
 
 exports.css = css;
 exports.dev = dev;
+exports.default = series( css, dev );
