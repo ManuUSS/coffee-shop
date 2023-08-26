@@ -16,7 +16,7 @@ const css_compiler = ( done ) => {
 const watch_scss = () => {
     // Recieves two paramaters
     // file to watch and function to execute
-    watch( 'src/scss/**/*.scss', css );
+    watch( 'src/scss/**/*.scss', css_compiler );
 }
 
 exports.css = css_compiler;
