@@ -1,4 +1,19 @@
+@use 'vars';
 
-@mixin colors {
-    
+@mixin phone {
+    @media ( min-width: vars.$phone_mq ) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media ( min-width: vars.$tablet_mq ) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media ( min-width: vars.$desktop_mq ) {
+        @content;
+    }
 }

@@ -5,6 +5,10 @@
     padding: vars.$spacing 0;
     position: relative;
 
+    @include mixins.phone {
+        padding: 2rem 0;
+    }
+
     &::before {
         content: '';
         background-color: vars.$color_black;
