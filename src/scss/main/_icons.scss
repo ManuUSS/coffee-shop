@@ -1,0 +1,23 @@
+@use 'base/vars';
+
+.icons {
+    margin-top: 5rem;
+
+}
+.icons-list {
+    
+    li {
+        img {
+            margin: 0 auto;
+            width: 12rem;
+        }
+
+        p {
+            font-family: vars.$font_italic;
+            font-size: 3.2rem;
+            color: vars.$color_main;
+        }
+    }
+
+
+}
