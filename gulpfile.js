@@ -7,6 +7,7 @@ const autoprefixer = require('autoprefixer');
 // Images
 const image_min = require('gulp-imagemin');
 const image_webp = require('gulp-webp');
+const image_avif = require('gulp-avif');
 
 const css_compiler = ( done ) => {
 
@@ -27,8 +28,21 @@ const images = ( done ) => {
 }
 
 const to_webp = ( done ) => {
+    const options = {
+        quality: 50
+    }
     src('src/img/**/*.{png,jpg}')
-        .pipe( image_webp() )
+        .pipe( image_webp( options ) )
+        .pipe( dest('build/img'))
+    done();
+}
+
+const to_avif = ( done ) => {
+    const options = {
+        quality: 50
+    }
+    src('src/img/**/*.{png,jpg}')
+        .pipe( image_avif( options ) )
         .pipe( dest('build/img'))
     done();
 }
@@ -44,4 +58,5 @@ exports.css = css_compiler;
 exports.dev = watch_scss;
 exports.images = images;
 exports.to_webp = to_webp;
-exports.default = series( images, to_webp, css_compiler, watch_scss );
+exports.to_avif = to_avif;
+exports.default = series( images, to_webp, to_avif, css_compiler, watch_scss );
