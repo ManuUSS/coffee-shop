@@ -1,4 +1,25 @@
+ @use 'base/vars' as vars;
 
 .header {
-    color: black;
+    padding: vars.$spacing 0;
+    position: relative;
+
+    &::before {
+        content: '';
+        background-color: vars.$color_black;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: .6;
+    }
+
+    .header-content {
+        position: relative;
+    }
+}
+
+.header-start {
+    background-image: url(../img/header_inicio.jpg);
 }
