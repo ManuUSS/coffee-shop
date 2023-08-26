@@ -1,7 +1,11 @@
 const { src, dest, watch, series } = require('gulp');
+// SCSS and CSS
 const gulp_sass = require('gulp-sass')( require('sass') );
 const post_css = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+
+// Images
+const image_min = require('gulp-imagemin');
 
 const css_compiler = ( done ) => {
 
@@ -16,7 +20,9 @@ const css_compiler = ( done ) => {
 
 const images = ( done ) => {
     src('src/img/**/*')
-    .pipe( dest('build/img') )
+        .pipe( image_min({ optimizationLevel: 3 }) )
+        .pipe( dest('build/img') )
+
     done();
 }
 
@@ -26,6 +32,7 @@ const watch_scss = () => {
     watch( 'src/scss/**/*.scss', css_compiler );
     watch( 'src/img/**/*', images );
 }
+
 exports.css = css_compiler;
 exports.dev = watch_scss;
 exports.images = images;
