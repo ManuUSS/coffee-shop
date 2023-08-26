@@ -1,4 +1,5 @@
  @use 'base/vars' as vars;
+ @use 'base/mixins' as mixins;
 
 .header {
     padding: vars.$spacing 0;
