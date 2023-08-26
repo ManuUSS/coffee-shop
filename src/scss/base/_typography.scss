@@ -1,0 +1,21 @@
+@use 'vars';
+
+h1, h2, h3 {
+    font-family: vars.$font_main;
+    margin: 0 0 vars.$spacing 0;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
