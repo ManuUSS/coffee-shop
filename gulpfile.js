@@ -3,7 +3,7 @@ const gulp_sass = require('gulp-sass')( require('sass') );
 const post_css = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
-const css = ( done ) => {
+const css_compiler = ( done ) => {
 
     // Identifies the file
     src('src/scss/app.scss')
@@ -13,12 +13,12 @@ const css = ( done ) => {
     done();
 }
 
-const dev = () => {
+const watch_scss = () => {
     // Recieves two paramaters
     // file to watch and function to execute
     watch( 'src/scss/**/*.scss', css );
 }
 
-exports.css = css;
-exports.dev = dev;
-exports.default = series( css, dev );
+exports.css = css_compiler;
+exports.dev = watch_scss;
+exports.default = series( css_compiler, watch_scss );
