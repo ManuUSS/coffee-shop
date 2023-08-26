@@ -12,11 +12,13 @@ html {
 body {
     font-family: vars.$font_main;
     font-size: 1.6rem;
+    background-color: vars.$color_secondary-light;
 }
 
 p {
     color: vars.$color_black;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    line-height: 2;
 }
 
 a {
