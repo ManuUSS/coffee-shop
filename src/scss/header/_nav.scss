@@ -1,4 +1,38 @@
+@use 'base/mixins' as mixins;
+@use 'base/vars';
 
-.nav {
-    color: black;
+
+.nav-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: vars.$spacing;
+
+    @include mixins.tablet {
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    a {
+        color: vars.$color_white;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 1rem;
+
+        &:hover {
+            color: vars.$color_secondary;
+        }
+
+        &.active {
+            color: vars.$color_secondary;
+        }
+
+        @include mixins.tablet {
+            margin-bottom: 0;
+        }
+
+    }
+
 }
