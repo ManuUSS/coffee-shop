@@ -13,12 +13,20 @@ const css_compiler = ( done ) => {
     done();
 }
 
+
+const images = ( done ) => {
+    src('src/img/**/*')
+    .pipe( dest('build/img') )
+    done();
+}
+
 const watch_scss = () => {
     // Recieves two paramaters
     // file to watch and function to execute
     watch( 'src/scss/**/*.scss', css_compiler );
+    watch( 'src/img/**/*', images );
 }
-
 exports.css = css_compiler;
 exports.dev = watch_scss;
-exports.default = series( css_compiler, watch_scss );
+exports.images = images;
+exports.default = series( images, css_compiler, watch_scss );
