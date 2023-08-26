@@ -3,7 +3,7 @@
 
 .main-content {
     background-color: vars.$color_white;
-    padding: 2rem;
+    padding: 5rem vars.$spacing;
 
     @include mixins.tablet {
         padding: 10rem;
