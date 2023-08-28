@@ -3,14 +3,13 @@
 
 .icons {
     margin-top: 5rem;
+}
 
+.icons-list {
+    
     @include mixins.tablet {
         @include mixins.grid(3, 2rem);
     }
-    
-}
-.icons-list {
-    
     li {
         img {
             margin: 0 auto;

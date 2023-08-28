@@ -1,5 +1,9 @@
 @use 'base/mixins' as mixins;
 
+.experience {
+    margin-top: 5rem;
+}
+
 .galery {
     @include mixins.grid(2, 2rem);
     
@@ -65,7 +69,7 @@
                     width: 62rem;
                 }
             }
-            &:nth-child(9) {
+            &:nth-child(10) {
                 grid-column: 3 / 5;
                 img {
                     width: 62rem;
