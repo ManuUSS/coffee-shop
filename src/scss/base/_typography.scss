@@ -38,3 +38,17 @@ h2 {
 h3 {
     font-size: 3.2rem;
 }
+
+.header-white {
+    @extend h2;
+    color: vars.$color_white;
+    
+    span {
+        color: vars.$color_white;
+    }
+
+    &::after {
+        display: none;
+    }
+
+}
