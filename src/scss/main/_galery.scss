@@ -39,7 +39,14 @@
             &:nth-child(5) {
                 grid-column: 3 / 5;
                 img {
-                    height: 62rem;
+                    width: 62rem;
+                    object-position: center;
+                }
+            }
+            &:nth-child(6) {
+                grid-column: 3 / 5;
+                img {
+                    width: 62rem;
                     object-position: center;
                 }
             }
