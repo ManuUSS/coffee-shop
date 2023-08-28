@@ -1,8 +1,13 @@
 @use 'base/vars';
+@use 'base/mixins' as mixins;
 
 .icons {
     margin-top: 5rem;
 
+    @include mixins.tablet {
+        @include mixins.grid(3, 2rem);
+    }
+    
 }
 .icons-list {
     
