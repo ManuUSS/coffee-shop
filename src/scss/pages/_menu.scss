@@ -1,0 +1,32 @@
+@use 'base/vars';
+@use 'base/mixins' as mixins;
+
+.content-menu {
+
+    background-image: url(../img/cafe.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    aspect-ratio: 3 / 6;
+    
+    @include mixins.phone {
+        aspect-ratio: 3 / 4;
+    }
+    
+    @include mixins.tablet {
+        @include mixins.grid( 2, vars.$spacing );
+        aspect-ratio: 16 / 6;
+        background-size: 40%;
+        background-position: bottom right; 
+    }
+
+    .text {
+        p {
+            font-size: 2rem;
+        }
+    }
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
