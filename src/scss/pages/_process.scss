@@ -1,0 +1,51 @@
+@use 'base/vars';
+@use 'base/mixins' as mixins;
+
+.process-coffee {
+    
+    margin-bottom: 2rem;
+
+    @include mixins.tablet {
+        display: flex;
+        gap: vars.$spacing;
+        align-items: center;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    &:nth-child( even ) {
+        .text {
+            order: 1;
+        }
+        .imagen {
+            order: 2;
+        }
+    }
+
+    .imagen,
+    .text {
+        flex: 1;
+    }
+
+
+
+    .text {
+        margin-top: 1rem;
+
+        h3 {
+            margin: 0;
+            text-align: left;
+            color: vars.$color_main;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 40%;
+                height: 5px;
+                background-color: vars.$color_secondary;
+            }
+        }
+
+    }
+}
