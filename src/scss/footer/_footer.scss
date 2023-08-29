@@ -1,0 +1,47 @@
+@use 'base/vars';
+@use 'base/mixins' as mixins;
+
+.footer {
+    background-color: vars.$color_main;
+    
+    .footer-content {
+        background-color: vars.$color_white;
+        padding: 5rem;
+
+        @include mixins.tablet {
+            @include mixins.grid(3, 2rem);
+
+        } 
+    }
+
+    .copyright {
+        text-align: center;
+        margin: 0;
+        color: vars.$color_white;
+        padding: 2rem;
+    }
+
+}
+
+.footer-box {
+    font-family: vars.$font_italic;
+    text-align: center;
+    margin-bottom: vars.$spacing;
+    
+    @include mixins.tablet {
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-family: vars.$font_italic;
+        margin: 0 0 1rem 0;
+        font-size: 2.4rem;
+        color: vars.$color_secondary;
+    }
+
+    p,a {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+}
