@@ -1,3 +1,49 @@
 @use 'base/vars';
 @use 'base/mixins' as mixins;
 
+.content-contact {
+    @include mixins.tablet {
+        @include mixins.grid( 2, vars.$spacing );
+        background-image: url(../img/granos_cafe.jpg);
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+}
+
+.form-contact {
+    .field {
+        margin-bottom: 2rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        label {
+            text-transform: uppercase;
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        input:not([type="submit"]),
+        select {
+            width: 100%;
+            padding: 1rem;
+            border: .5rem solid vars.$color_main;
+        }
+        
+        input[type="submit"] {
+            background-color: vars.$color_main;
+            border: none;
+            color: vars.$color_white;
+            font-size: 2.2rem;
+            padding: 1rem;
+            text-transform: uppercase;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
